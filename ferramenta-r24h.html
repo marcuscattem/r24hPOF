@@ -122,6 +122,54 @@
   .summary-alert.warn { border-color:#f2c36d; background:#fffaf0; }
   .summary-alert.error { border-color:#e38b92; background:#fff6f7; }
   .summary-alert small { display:block; margin-top:3px; color:#64748b; }
+  .meal-planner { margin-top:18px; padding:16px; border:1px solid var(--line); border-radius:8px; background:#fbfcfe; }
+  .meal-planner-header { display:flex; align-items:flex-end; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:14px; }
+  .meal-planner-header h3 { margin:0; font-size:16px; color:#122436; }
+  .meal-planner-header p { margin:4px 0 0; color:var(--muted); font-size:13px; }
+  .meal-create-controls { display:flex; gap:8px; align-items:flex-end; flex-wrap:wrap; }
+  .meal-create-controls select { min-width:190px; }
+  .meal-card-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:10px; }
+  .meal-card-button { display:flex; flex-direction:column; align-items:flex-start; justify-content:space-between; gap:8px; min-height:96px; height:auto; padding:12px; border:1px solid var(--line-strong); border-radius:8px; background:#fff; color:#17202a; text-align:left; white-space:normal; box-shadow:none; }
+  .meal-card-button:hover { border-color:#9fb2c5; background:#f8fafc; }
+  .meal-card-button strong { font-size:14px; line-height:1.25; }
+  .meal-card-button span { color:#526170; font-size:12px; font-weight:700; }
+  .meal-card-button em { color:#0f2537; font-style:normal; font-size:18px; font-weight:850; line-height:1; }
+  .meal-card-button.meal-cafe-da-manha,
+  .meal-card-button.meal-lanche-da-manha,
+  .meal-card-button.meal-almoco,
+  .meal-card-button.meal-lanche-da-tarde,
+  .meal-card-button.meal-jantar,
+  .meal-card-button.meal-ceia,
+  .meal-card-button.meal-extra { background-color:var(--card-bg)!important; }
+  .meal-card-button.meal-cafe-da-manha { border-left:6px solid #d89128; }
+  .meal-card-button.meal-lanche-da-manha { border-left:6px solid #33a96e; }
+  .meal-card-button.meal-almoco { border-left:6px solid #2c83ca; }
+  .meal-card-button.meal-lanche-da-tarde { border-left:6px solid #1fa0b7; }
+  .meal-card-button.meal-jantar { border-left:6px solid #d96a6a; }
+  .meal-card-button.meal-ceia { border-left:6px solid #8f5cc4; }
+  .meal-card-button.meal-extra { border-left:6px solid #94a3b8; }
+  .meal-blocks { display:grid; gap:8px; margin-top:14px; }
+  .meal-blocks details { border:1px solid var(--line); border-radius:8px; background:#fff; overflow:hidden; }
+  .meal-blocks summary { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:11px 12px; cursor:pointer; font-weight:800; color:#122436; list-style:none; }
+  .meal-blocks summary::-webkit-details-marker { display:none; }
+  .meal-macros { display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end; color:#526170; font-size:12px; font-weight:750; }
+  .meal-block-body { padding:0 12px 12px; overflow:auto; }
+  .meal-block-body table { min-width:720px; font-size:12px; }
+  .meal-modal-backdrop { position:fixed; inset:0; z-index:50; display:none; align-items:center; justify-content:center; padding:18px; background:rgba(15,37,55,.42); }
+  .meal-modal-backdrop.is-open { display:flex; }
+  .meal-modal { width:min(980px, 100%); max-height:90vh; overflow:auto; border-radius:8px; border:1px solid var(--line-strong); background:#fff; box-shadow:0 24px 70px rgba(15,37,55,.22); }
+  .meal-modal-header { position:sticky; top:0; z-index:2; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:18px; border-bottom:1px solid var(--line); background:#fff; }
+  .meal-modal-header h3 { margin:0; font-size:18px; color:#122436; }
+  .meal-modal-header p { margin:4px 0 0; color:#526170; font-size:13px; font-weight:700; }
+  .meal-modal-close { width:38px; height:38px; padding:0; border:1px solid var(--line-strong); background:#fff; color:#17202a; font-size:22px; line-height:1; }
+  .meal-modal-body { padding:18px; display:grid; gap:16px; }
+  .meal-modal-form { display:grid; grid-template-columns:minmax(220px, 2fr) minmax(210px, 1.4fr) 90px 100px 80px minmax(160px, 1fr) auto; gap:10px; align-items:end; }
+  .meal-modal-field label { margin-bottom:5px; }
+  .meal-modal-food-list { display:grid; gap:8px; }
+  .meal-modal-food-row { display:grid; grid-template-columns:minmax(180px, 1.6fr) minmax(160px, 1.2fr) repeat(4, minmax(70px, .55fr)) 38px; gap:8px; align-items:center; padding:10px; border:1px solid var(--line); border-radius:8px; background:#fbfcfe; font-size:13px; }
+  .meal-modal-food-row b { color:#122436; }
+  .meal-modal-food-row span { color:#526170; }
+  .meal-modal-remove { width:34px; height:34px; padding:0; border:1px solid #f3c2c6; background:#fff0f1; color:#a12832; font-size:18px; }
   /* Cores por refeição */
   .meal-cafe-da-manha { background-color:var(--cafe)!important; }
   .meal-lanche-da-manha { background-color:var(--lm)!important; }
@@ -169,7 +217,7 @@
 }
 .row-controls-left button:hover{ background:var(--bg) }
 .row-controls-left .del{ color:#b4232c; border-color:#f3c2c6; background:#ffecec }
-@media (max-width:760px){
+  @media (max-width:760px){
   .wrap { padding:18px 12px 32px; }
   .app-header { align-items:flex-start; flex-direction:column; padding:22px; }
   .header-stats { justify-content:flex-start; width:100%; }
@@ -178,6 +226,12 @@
   .btn-group, #r24h-registro-card > div:first-of-type { width:100%; }
   button, .file-action { width:100%; }
   .status-line { align-items:flex-start; flex-direction:column; }
+  .meal-planner-header { align-items:flex-start; }
+  .meal-create-controls, .meal-create-controls select { width:100%; }
+  .meal-modal { max-height:94vh; }
+  .meal-modal-form { grid-template-columns:1fr; }
+  .meal-modal-food-row { grid-template-columns:1fr; }
+  .meal-macros { justify-content:flex-start; }
 }
 @media (hover:none){
   button:hover, .file-action:hover { transform:none; }
@@ -332,6 +386,24 @@
       <span class="micro-chip">Micros ativos: <span id="activeMicrosCount">0</span></span>
     </div>
 
+    <div class="meal-planner" id="mealPlanner">
+      <div class="meal-planner-header">
+        <div>
+          <h3>Blocos de refeição</h3>
+          <p>Abra uma refeição para adicionar, revisar ou remover alimentos daquele bloco.</p>
+        </div>
+        <div class="meal-create-controls">
+          <div>
+            <label for="mealBlockSelect">Refeição</label>
+            <select id="mealBlockSelect"></select>
+          </div>
+          <button id="createMealBlockBtn" type="button" class="btn-secondary">Abrir bloco</button>
+        </div>
+      </div>
+      <div id="mealBlockGrid" class="meal-card-grid"></div>
+      <div id="mealBlocks" class="meal-blocks"></div>
+    </div>
+
     <div class="table-container">
       <table id="records">
         <thead>
@@ -472,6 +544,48 @@
     <h2 class="section-title">8. Relatório resumido</h2>
     <div id="summaryReport" class="summary-report">
       <div class="summary-empty">Adicione itens ao R24h para gerar o resumo final.</div>
+    </div>
+  </div>
+</div>
+
+<div id="mealBlockModalBackdrop" class="meal-modal-backdrop" aria-hidden="true">
+  <div class="meal-modal" role="dialog" aria-modal="true" aria-labelledby="mealBlockModalTitle">
+    <div class="meal-modal-header">
+      <div>
+        <h3 id="mealBlockModalTitle">Bloco de refeição</h3>
+        <p id="mealBlockModalStats">0 itens · 0 kcal</p>
+      </div>
+      <button id="mealBlockModalClose" type="button" class="meal-modal-close" aria-label="Fechar bloco">×</button>
+    </div>
+    <div class="meal-modal-body">
+      <div class="meal-modal-form">
+        <div class="meal-modal-field">
+          <label for="mealBlockFood">Alimento</label>
+          <input id="mealBlockFood" list="foodList" placeholder="Digite o alimento">
+        </div>
+        <div class="meal-modal-field">
+          <label for="mealBlockMeasure">Medida caseira</label>
+          <select id="mealBlockMeasure" class="household-select"></select>
+        </div>
+        <div class="meal-modal-field">
+          <label for="mealBlockUnit">Unidade</label>
+          <select id="mealBlockUnit"><option value="g">g</option><option value="mL">mL</option></select>
+        </div>
+        <div class="meal-modal-field">
+          <label for="mealBlockPortion">Porção</label>
+          <input id="mealBlockPortion" type="number" step="any" min="0" value="100">
+        </div>
+        <div class="meal-modal-field">
+          <label for="mealBlockQty">Qtd</label>
+          <input id="mealBlockQty" type="number" step="any" min="0" value="1">
+        </div>
+        <div class="meal-modal-field">
+          <label for="mealBlockObs">Observação</label>
+          <input id="mealBlockObs" type="text" placeholder="Opcional">
+        </div>
+        <button id="mealBlockAddFoodBtn" type="button" class="btn-primary">Adicionar</button>
+      </div>
+      <div id="mealBlockFoodList" class="meal-modal-food-list"></div>
     </div>
   </div>
 </div>
@@ -735,6 +849,8 @@ function toggleExtraMeasures(){
   showExtraMeasures=!showExtraMeasures;
   updateExtraMeasuresButton();
   document.querySelectorAll('#records tbody tr').forEach(function(tr){ refreshHouseholdSelect(tr); recalcRow(tr,true); });
+  refreshMealBlockMeasureSelect();
+  updateMealPlannerViews();
 }
 function validateHouseholdMeasure(tr){
   if(!tr) return {severity:'ok', label:'Adequada', message:'', food:'', measure:''};
@@ -919,6 +1035,208 @@ function updateTotals(){
     const def=MICRO_DEFS.find(d=>d.key===k); const td=document.getElementById('micro-total-'+k); if(td) td.textContent = microTotals[k].toFixed(def.fmt).replace('.',',');
   });
   updateSummaryReport();
+  updateMealPlannerViews();
+}
+
+// =====================
+// BLOCOS DE REFEIÇÃO
+// =====================
+var currentMealBlockName='';
+function mealSlug(meal){ return String(meal||'').toLowerCase().replace(/\s+/g,'-').replace(/[ãâáà]/g,'a').replace(/[êéè]/g,'e').replace(/[íì]/g,'i').replace(/[õóò]/g,'o').replace(/[úù]/g,'u').replace(/ç/g,'c'); }
+function getRowsForMeal(meal){
+  return Array.from(document.querySelectorAll('#records tbody tr')).filter(function(tr){
+    return (tr.children[0]?.querySelector('select')?.value||'')===meal;
+  });
+}
+function getMealTotals(rows){
+  return rows.reduce(function(acc,tr){
+    acc.kcal+=parseDisplayNumber(tr.children[7]?.textContent||'');
+    acc.carb+=parseDisplayNumber(tr.children[8]?.textContent||'');
+    acc.prot+=parseDisplayNumber(tr.children[9]?.textContent||'');
+    acc.lip+=parseDisplayNumber(tr.children[10]?.textContent||'');
+    acc.fib+=parseDisplayNumber(tr.children[11]?.textContent||'');
+    return acc;
+  }, {kcal:0,carb:0,prot:0,lip:0,fib:0});
+}
+function getHouseholdUnitsForFoodText(foodText){
+  var sourceUnits=getActiveHouseholdUnits();
+  var foodObj=foodsByNorm[normalizeString(foodText||'')] || findBestFoodMatch(foodText||'');
+  if(!foodText) return sourceUnits.filter(function(u){ return !u.foods || !u.foods.length; });
+  var linked=sourceUnits.filter(function(u){ return householdUnitAppliesToFood(u, foodText, foodObj); });
+  linked.sort(function(a,b){ return householdUnitMatchScore(b, foodText, foodObj)-householdUnitMatchScore(a, foodText, foodObj); });
+  return linked.length ? linked : sourceUnits.filter(function(u){ return !u.foods || !u.foods.length; });
+}
+function renderMealBlockGrid(){
+  var host=document.getElementById('mealBlockGrid');
+  if(!host) return;
+  host.innerHTML=mealOptions.map(function(meal){
+    var rows=getRowsForMeal(meal);
+    var totals=getMealTotals(rows);
+    return '<button type="button" class="meal-card-button meal-'+mealSlug(meal)+'" data-meal="'+htmlEscape(meal)+'">'+
+      '<strong>'+htmlEscape(meal)+'</strong>'+
+      '<span>'+rows.length+' item(ns)</span>'+
+      '<em>'+formatBR(totals.kcal,0)+' kcal</em>'+
+    '</button>';
+  }).join('');
+  host.querySelectorAll('button[data-meal]').forEach(function(btn){
+    btn.addEventListener('click', function(){ openMealBlockModal(this.dataset.meal); });
+  });
+}
+function renderMealBlocks(){
+  var host=document.getElementById('mealBlocks');
+  if(!host) return;
+  var html='';
+  mealOptions.forEach(function(meal){
+    var rows=getRowsForMeal(meal);
+    if(!rows.length) return;
+    var totals=getMealTotals(rows);
+    var body=rows.map(function(tr){
+      var t=tr.children;
+      var unit=findHouseholdUnitByKey(t[5]?.querySelector('select')?.value||'');
+      var measure=unit ? getHouseholdUnitDisplayName(unit) : (t[5]?.querySelector('select')?.value||'');
+      return '<tr>'+
+        '<td>'+htmlEscape(t[1]?.querySelector('input')?.value||'')+'</td>'+
+        '<td>'+htmlEscape(measure||'—')+'</td>'+
+        '<td class="num">'+htmlEscape(t[3]?.querySelector('input')?.value||'')+'</td>'+
+        '<td class="num">'+htmlEscape(t[4]?.querySelector('input')?.value||'')+'</td>'+
+        '<td class="num">'+htmlEscape(t[7]?.textContent||'')+'</td>'+
+        '<td>'+htmlEscape(t[12]?.textContent||'')+'</td>'+
+        '<td>'+htmlEscape(t[13]?.textContent||'')+'</td>'+
+      '</tr>';
+    }).join('');
+    html += '<details open class="meal-'+mealSlug(meal)+'">'+
+      '<summary><span>'+htmlEscape(meal)+'</span><span class="meal-macros"><span>'+rows.length+' item(ns)</span><span>'+formatBR(totals.kcal,0)+' kcal</span><span>'+formatBR(totals.carb,1)+' C</span><span>'+formatBR(totals.prot,1)+' P</span><span>'+formatBR(totals.lip,1)+' L</span></span></summary>'+
+      '<div class="meal-block-body"><table><thead><tr><th>Alimento</th><th>Medida</th><th class="num">Porção</th><th class="num">Qtd</th><th class="num">kcal</th><th>POF</th><th>NOVA</th></tr></thead><tbody>'+body+'</tbody></table></div>'+
+    '</details>';
+  });
+  host.innerHTML=html || '<div class="summary-empty">Os blocos aparecerão aqui conforme os itens forem registrados.</div>';
+}
+function updateMealPlannerViews(){
+  renderMealBlockGrid();
+  renderMealBlocks();
+  if(currentMealBlockName) renderMealBlockModalRows();
+}
+function populateMealBlockSelect(){
+  var sel=document.getElementById('mealBlockSelect');
+  if(!sel) return;
+  sel.innerHTML='';
+  mealOptions.forEach(function(meal){
+    var opt=document.createElement('option');
+    opt.value=meal; opt.textContent=meal; sel.appendChild(opt);
+  });
+}
+function refreshMealBlockMeasureSelect(){
+  var sel=document.getElementById('mealBlockMeasure');
+  if(!sel) return;
+  var keepValue=sel.value;
+  var current=findHouseholdUnitByKey(keepValue);
+  if(keepValue && current && !showExtraMeasures && !isTbcaHouseholdUnit(current)) keepValue='';
+  var foodText=document.getElementById('mealBlockFood')?.value||'';
+  populateHouseholdSelect(sel, getHouseholdUnitsForFoodText(foodText), keepValue);
+}
+function applyMealBlockMeasure(){
+  var unit=findHouseholdUnitByKey(document.getElementById('mealBlockMeasure')?.value||'');
+  if(!unit) return;
+  document.getElementById('mealBlockUnit').value=unit.unit;
+  document.getElementById('mealBlockPortion').value=unit.value;
+}
+function resetMealBlockFields(){
+  var food=document.getElementById('mealBlockFood');
+  if(food) food.value='';
+  var portion=document.getElementById('mealBlockPortion');
+  if(portion) portion.value='100';
+  var qty=document.getElementById('mealBlockQty');
+  if(qty) qty.value='1';
+  var obs=document.getElementById('mealBlockObs');
+  if(obs) obs.value='';
+  var unit=document.getElementById('mealBlockUnit');
+  if(unit) unit.value='g';
+  refreshMealBlockMeasureSelect();
+}
+function openMealBlockModal(mealName){
+  currentMealBlockName=mealName || mealOptions[0];
+  var title=document.getElementById('mealBlockModalTitle');
+  if(title) title.textContent='Bloco: '+currentMealBlockName;
+  resetMealBlockFields();
+  renderMealBlockModalRows();
+  var backdrop=document.getElementById('mealBlockModalBackdrop');
+  if(backdrop){ backdrop.classList.add('is-open'); backdrop.setAttribute('aria-hidden','false'); }
+  setTimeout(function(){ document.getElementById('mealBlockFood')?.focus(); }, 0);
+}
+function closeMealBlockModal(){
+  currentMealBlockName='';
+  var backdrop=document.getElementById('mealBlockModalBackdrop');
+  if(backdrop){ backdrop.classList.remove('is-open'); backdrop.setAttribute('aria-hidden','true'); }
+}
+function renderMealBlockModalRows(){
+  if(!currentMealBlockName) return;
+  var rows=getRowsForMeal(currentMealBlockName);
+  var totals=getMealTotals(rows);
+  var stats=document.getElementById('mealBlockModalStats');
+  if(stats) stats.textContent=rows.length+' item(ns) · '+formatBR(totals.kcal,0)+' kcal · '+formatBR(totals.carb,1)+' g carbo · '+formatBR(totals.prot,1)+' g prot · '+formatBR(totals.lip,1)+' g lip';
+  var host=document.getElementById('mealBlockFoodList');
+  if(!host) return;
+  if(!rows.length){ host.innerHTML='<div class="summary-empty">Nenhum alimento neste bloco.</div>'; return; }
+  host.innerHTML='';
+  rows.forEach(function(tr){
+    var t=tr.children;
+    var unit=findHouseholdUnitByKey(t[5]?.querySelector('select')?.value||'');
+    var measure=unit ? getHouseholdUnitDisplayName(unit) : (t[5]?.querySelector('select')?.value||'Sem medida');
+    var row=document.createElement('div');
+    row.className='meal-modal-food-row';
+    row.innerHTML='<b>'+htmlEscape(t[1]?.querySelector('input')?.value||'')+'</b>'+
+      '<span>'+htmlEscape(measure||'Sem medida')+'</span>'+
+      '<span>'+htmlEscape(t[3]?.querySelector('input')?.value||'')+' '+htmlEscape(t[2]?.querySelector('select')?.value||'')+'</span>'+
+      '<span>Qtd '+htmlEscape(t[4]?.querySelector('input')?.value||'')+'</span>'+
+      '<span>'+htmlEscape(t[7]?.textContent||'0')+' kcal</span>'+
+      '<span>'+htmlEscape(t[13]?.textContent||'')+'</span>';
+    var remove=document.createElement('button');
+    remove.type='button';
+    remove.className='meal-modal-remove';
+    remove.textContent='×';
+    remove.title='Remover do bloco';
+    remove.addEventListener('click', function(){ tr.remove(); updateTotals(); updateMarkers(); });
+    row.appendChild(remove);
+    host.appendChild(row);
+  });
+}
+function addFoodToMealBlock(){
+  var food=(document.getElementById('mealBlockFood')?.value||'').trim();
+  var portion=parseDisplayNumber(document.getElementById('mealBlockPortion')?.value||'');
+  var qty=parseDisplayNumber(document.getElementById('mealBlockQty')?.value||'');
+  if(!food){ alert('Informe o alimento.'); return; }
+  if(!portion || portion<=0){ alert('Informe uma porção válida.'); return; }
+  if(!qty || qty<=0) qty=1;
+  var tr=addRow();
+  tr.children[0].querySelector('select').value=currentMealBlockName || mealOptions[0];
+  tr.children[1].querySelector('input').value=food;
+  tr.children[2].querySelector('select').value=document.getElementById('mealBlockUnit')?.value||'g';
+  tr.children[3].querySelector('input').value=portion;
+  tr.children[4].querySelector('input').value=qty;
+  tr.children[6].querySelector('input').value=document.getElementById('mealBlockObs')?.value||'';
+  refreshHouseholdSelect(tr);
+  var measureKey=document.getElementById('mealBlockMeasure')?.value||'';
+  if(measureKey){
+    tr.children[5].querySelector('select').value=measureKey;
+    var unit=findHouseholdUnitByKey(measureKey);
+    if(unit){ tr.children[2].querySelector('select').value=unit.unit; tr.children[3].querySelector('input').value=unit.value; }
+  }
+  colorizeRow(tr);
+  recalcRow(tr,true);
+  resetMealBlockFields();
+  renderMealBlockModalRows();
+}
+function bindMealPlanner(){
+  populateMealBlockSelect();
+  bindAction('createMealBlockBtn', function(){ openMealBlockModal(document.getElementById('mealBlockSelect')?.value || mealOptions[0]); });
+  bindAction('mealBlockModalClose', closeMealBlockModal);
+  bindAction('mealBlockAddFoodBtn', addFoodToMealBlock);
+  var backdrop=document.getElementById('mealBlockModalBackdrop');
+  if(backdrop){ backdrop.addEventListener('click', function(evt){ if(evt.target===backdrop) closeMealBlockModal(); }); }
+  var food=document.getElementById('mealBlockFood');
+  if(food){ food.addEventListener('input', refreshMealBlockMeasureSelect); food.addEventListener('change', refreshMealBlockMeasureSelect); }
+  var measure=document.getElementById('mealBlockMeasure');
+  if(measure){ measure.addEventListener('change', applyMealBlockMeasure); }
 }
 
 // =====================
@@ -944,7 +1262,7 @@ function updateDuplaCheck(){ var details=document.getElementById('checkDetails')
 function addNewFood(){ var name=(document.getElementById('newFoodName').value||'').trim(); if(!name){ alert('Informe o nome do alimento.'); return; } var norm=normalizeString(name); if(foodsByNorm[norm]){ alert('Esse alimento já existe na base.'); return; } var obj={}; obj['Alimento']=name; obj['Energia (kcal)']=0; obj['Carboidrato total']=0; obj['Proteína']=0; obj['Lipídios']=0; obj['Fibra alimentar']=0; // micros zerados também
   MICRO_DEFS.forEach(d=>obj[d.key]=0);
   foodsByNorm[norm]=obj; originalNames.push(name); originalNames.sort(); document.getElementById('newFoodName').value=''; document.getElementById('foodsCount').textContent=originalNames.length; refreshFoodIndexUI(); alert('Alimento "'+name+'" adicionado com sucesso (nutrientes zerados).'); }
-function addNewUnit(){ var name=(document.getElementById('newUnitName').value||'').trim(); var val=parseFloat((document.getElementById('newUnitValue').value||'').replace(',', '.')); var unit=document.getElementById('newUnitType').value; if(!name||!val){ alert('Preencha nome e valor da medida.'); return; } addHouseholdUnit(name,val,unit); document.getElementById('newUnitName').value=''; document.getElementById('newUnitValue').value=''; alert('Medida adicionada: '+name+' ('+val+' '+unit+')'); document.querySelectorAll('.household-select').forEach(function(select){ var currentValue=select.value; var parent=select.parentNode; var newSelect=createHouseholdSelect(); newSelect.value=currentValue; parent.replaceChild(newSelect, select); }); }
+function addNewUnit(){ var name=(document.getElementById('newUnitName').value||'').trim(); var val=parseFloat((document.getElementById('newUnitValue').value||'').replace(',', '.')); var unit=document.getElementById('newUnitType').value; if(!name||!val){ alert('Preencha nome e valor da medida.'); return; } addHouseholdUnit(name,val,unit); document.getElementById('newUnitName').value=''; document.getElementById('newUnitValue').value=''; alert('Medida adicionada: '+name+' ('+val+' '+unit+')'); document.querySelectorAll('#records .household-select').forEach(function(select){ var currentValue=select.value; var parent=select.parentNode; var newSelect=createHouseholdSelect(); newSelect.value=currentValue; parent.replaceChild(newSelect, select); }); refreshMealBlockMeasureSelect(); }
 function addHouseholdUnit(name,value,unit){ if(!name||!value||!unit) return; householdUnits.push({name:name,value:value,unit:unit}); }
 function refreshFoodIndexUI(){ var dl=document.getElementById('foodList'); dl.innerHTML=''; originalNames.forEach(function(n){ var op=document.createElement('option'); op.value=n; dl.appendChild(op); }); }
 function htmlEscape(v){ return String(v===undefined||v===null?'':v).replace(/[&<>"']/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]; }); }
@@ -1438,6 +1756,7 @@ window.onload=function(){
     }
   });
   updateExtraMeasuresButton();
+  bindMealPlanner();
   buildMicrosSelector();
   var initialRow=addRow(); initialRow.querySelector('select').value='Almoço'; colorizeRow(initialRow); recalcRow(initialRow); updateDuplaCheck(); updateSummaryReport();
 };
